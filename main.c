@@ -180,10 +180,8 @@ unsigned char epap_send_data(unsigned char data)
 	SEND_DATA;
     // Load data into the buffer
     SPDR = data;
- 
     //Wait until transmission complete
     while(!(SPSR & 0x80 ));
-
 	CS_HIGH;
     // Return received data
     return(SPDR);
@@ -196,10 +194,8 @@ unsigned char epap_send_command(unsigned char data)
 	SEND_COMMAND;
     // Load data into the buffer
     SPDR = data;
- 
     //Wait until transmission complete
     while(!(SPSR & 0x80 ));
-	
 	CS_HIGH;
     // Return received data
     return(SPDR);
